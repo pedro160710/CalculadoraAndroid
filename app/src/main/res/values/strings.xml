@@ -27,5 +27,8 @@
     <string name="btnigual">=</string>
     <string name="btnc">c</string>
     <string name="btndel">DEL</string>
+    <string name="btnfactorial">!</string>
+    <string name="btnpi">pi</string>
+    <string name="btne">e</string>
 
 </resources>

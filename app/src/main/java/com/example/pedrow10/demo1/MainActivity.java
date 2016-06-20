@@ -51,7 +51,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
 //            el numero de un digito o mas siempre se va a guardar en esta posicion del arreglo
-            arrayList.add(string1);
+            if(string.equals("pi")) {
+                arrayList.add("3.141592653589793");
+            }else if (string.equals("e")){
+                arrayList.add("2.718281828459045");
+            }else{
+                arrayList.add(string1);
+            }
         } else {
             arrayList.add(string);
             arrayList.add("");
@@ -67,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 //        TextView textView1 = (TextView) findViewById(R.id.txtview1);
         Double calc = 0.0;
         int c = arrayList.size();
-        System.out.println("INGRESA A CACULAR "+ c);
+        System.out.println("INGRESA A CACULAR " + c);
 //ejemplo [2 + 3 * 4 - 3 ] size = 7, so c=
         while (c != 1) {
             System.out.println("INGRESA A WHILE");
@@ -75,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 if (arrayList.get(3).equals("*") || arrayList.get(3).equals("/")) {
                     if (arrayList.get(3).equals("*")) {
                         calc = Double.parseDouble(arrayList.get(2)) * Double.parseDouble(arrayList.get(4));
-                    }  if (arrayList.get(3).equals("/")) {
+                    }
+                    if (arrayList.get(3).equals("/")) {
                         calc = Double.parseDouble(arrayList.get(2)) / Double.parseDouble(arrayList.get(4));
                     }
 //                   calc =12; array= [2 + 3 * 4 - 3 ]
@@ -91,11 +98,14 @@ public class MainActivity extends AppCompatActivity {
                     //array= [2 + 12 - 3]
                     if (arrayList.get(1).equals("+")) {
                         calc = Double.parseDouble(arrayList.get(0)) + Double.parseDouble(arrayList.get(2));
-                    } if (arrayList.get(1).equals("-")) {
+                    }
+                    if (arrayList.get(1).equals("-")) {
                         calc = Double.parseDouble(arrayList.get(0)) - Double.parseDouble(arrayList.get(2));
-                    } if (arrayList.get(1).equals("*")) {
+                    }
+                    if (arrayList.get(1).equals("*")) {
                         calc = Double.parseDouble(arrayList.get(0)) * Double.parseDouble(arrayList.get(2));
-                    } if (arrayList.get(1).equals("/")) {
+                    }
+                    if (arrayList.get(1).equals("/")) {
                         calc = Double.parseDouble(arrayList.get(0)) / Double.parseDouble(arrayList.get(2));
                     }
 
@@ -113,12 +123,20 @@ public class MainActivity extends AppCompatActivity {
                 //array= [14 -3 ]
                 if (arrayList.get(1).equals("+")) {
                     calc = Double.parseDouble(arrayList.get(0)) + Double.parseDouble(arrayList.get(2));
-                }  if (arrayList.get(1).equals("-")) {
+                }
+                if (arrayList.get(1).equals("-")) {
                     calc = Double.parseDouble(arrayList.get(0)) - Double.parseDouble(arrayList.get(2));
-                }  if (arrayList.get(1).equals("*")) {
+                }
+                if (arrayList.get(1).equals("*")) {
                     calc = Double.parseDouble(arrayList.get(0)) * Double.parseDouble(arrayList.get(2));
-                }  if (arrayList.get(1).equals("/")) {
+                }
+                if (arrayList.get(1).equals("/")) {
                     calc = Double.parseDouble(arrayList.get(0)) / Double.parseDouble(arrayList.get(2));
+                }
+                if (arrayList.get(1).equals("^")) {
+                    System.out.println("POTENCIA " + calc);
+                    calc = Math.pow(Double.parseDouble(arrayList.get(0)), Double.parseDouble(arrayList.get(2)));
+
                 }
                 //calc = 11; array =[14 - 3]
                 arrayList.remove(0);//array=[- 3]
@@ -126,12 +144,10 @@ public class MainActivity extends AppCompatActivity {
                 arrayList.remove(0);//array=[ ]
 //                    mapeamos en la segunda posicion el resultado
                 arrayList.add(0, Double.toString(calc)); //array= [11]
-                System.out.println("valor array 0 "+arrayList.get(0).toString());
+                System.out.println("valor array 0 " + arrayList.get(0).toString());
 //                    actualizamos el tamanio del arreglo en la variable c.
                 c = arrayList.size(); //c= 1, ya que el tamanio es igual a 1, finaliza el loop
             }
-
-
         }
         textView.setText(Double.toString(calc));
     }
@@ -146,10 +162,10 @@ public class MainActivity extends AppCompatActivity {
         arrayList.clear();
     }
 
-    public void funcionEspecial(View v){
+    public void funcionEspecial(View v) {
         Double resultadoOperacion;
-        int opcion= v.getId();
-        switch(opcion){
+        int opcion = v.getId();
+        switch (opcion) {
             case R.id.digitseno:
                 resultadoOperacion = Math.sin(Double.parseDouble(arrayList.get(0)));
                 textView.setText(String.valueOf(resultadoOperacion));
@@ -163,13 +179,20 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(String.valueOf(resultadoOperacion));
                 break;
             case R.id.digitpotencia:
-                resultadoOperacion = Math.pow(Double.parseDouble(arrayList.get(0)),Double.parseDouble(arrayList.get(2)));
-                textView.setText(String.valueOf(resultadoOperacion));
+//                textView.setText(String.valueOf());
                 break;
             case R.id.digitraiz:
                 resultadoOperacion = Math.sqrt(Double.parseDouble(arrayList.get(0)));
                 textView.setText(String.valueOf(resultadoOperacion));
                 break;
+            case R.id.digitfactorial:
+                resultadoOperacion = 1.0;
+                for (int i = 1; i <= Integer.parseInt(arrayList.get(0)); i++) {
+                    resultadoOperacion = resultadoOperacion * i;
+                }
+                textView.setText(String.valueOf(resultadoOperacion));
+                break;
+
         }
     }
 }
