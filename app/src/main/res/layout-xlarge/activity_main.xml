@@ -1,115 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.pedrow10.demo1.MainActivity">
 
-    <GridLayout
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/txtview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginBottom="2dp"
+        android:gravity="right"
+        android:padding="2dp"
+        android:text=""
+        android:textSize="200dp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#03A9F4"
-        android:columnCount="4">
-
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:id="@+id/txtview2"
-            android:text="by  by"
-            android:layout_gravity="fill_horizontal"
-            android:gravity="right"
-            android:layout_columnSpan="4"
-            android:layout_marginBottom="2dp"
-            android:padding="2dp"
-            android:textSize="40dp"
-
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-
-            android:text="7"
-            android:id="@+id/digit7"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="8"
-            android:id="@+id/digit8"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="9"
-            android:id="@+id/digit9"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="+"
-            android:id="@+id/digitmas"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="4"
-            android:id="@+id/digit4"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="5"
-            android:id="@+id/digit5"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="6"
-            android:id="@+id/digit6"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="-"
-            android:id="@+id/digitmenos"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="1"
-            android:id="@+id/digit1"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="2"
-            android:id="@+id/digit2"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="3"
-            android:id="@+id/digit3"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="*"
-            android:id="@+id/digitpor"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="."
-            android:id="@+id/digit."/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:layout_gravity="fill_horizontal"
-            android:layout_columnSpan="2"
-            android:text="0"
-            android:id="@+id/digit0"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:text="/"
-            android:id="@+id/digitdividido"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/keysize"
-            android:layout_gravity="fill_horizontal"
-            android:layout_columnSpan="4"
-            android:text="="
-            android:id="@+id/digitigual"/>
+        android:orientation="horizontal"
+        >
 
 
-    </GridLayout>
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#545658"
+            android:columnCount="3">
+
+
+            <Button
+                android:id="@+id/digit7"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btn7"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+            <Button
+                android:id="@+id/digit8"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btn8"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+            <Button
+                android:id="@+id/digit9"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btn9"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+
+            <Button
+                android:id="@+id/digit4"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btn4"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+            <Button
+                android:id="@+id/digit5"
+                android:onClick="obtenerDigito"
+                android:layout_width="wrap_content"
+                android:text="@string/btn5"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+            <Button
+                android:id="@+id/digit6"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btn6"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+
+
+            <Button
+                android:id="@+id/digit1"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btn1"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+            <Button
+                android:id="@+id/digit2"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btn2"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+            <Button
+                android:id="@+id/digit3"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btn3"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+
+            <Button
+                android:id="@+id/digit."
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btnpunto"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+            <Button
+                android:id="@+id/digit0"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:onClick="obtenerDigito"
+                android:text="@string/btn0"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+
+            <Button
+                android:id="@+id/digitigual"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:text="@string/btnigual"
+                android:textSize="@dimen/keysize"
+                android:background="#545658"/>
+
+        </GridLayout>
+
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="#a3a4a6"
+            android:columnCount="2">
+
+            <Button
+                android:id="@+id/digitmas"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btnsuma"
+                android:textSize="@dimen/keysize"
+                android:background="#a3a4a6"/>
+            <Button
+                android:id="@+id/digitdel"
+                android:layout_width="wrap_content"
+                android:text="@string/btndel"
+                android:textSize="@dimen/keysize"
+                android:background="#a3a4a6"
+                />
+            <Button
+                android:id="@+id/digitmenos"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btnresta"
+                android:textSize="@dimen/keysize"
+                android:background="#a3a4a6"/>
+
+            <Button
+
+
+                android:layout_width="wrap_content"
+                android:text=""
+                android:textSize="@dimen/keysize"
+                android:background="#a3a4a6"/>
+
+
+            <Button
+                android:id="@+id/digitpor"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btnmultiplicacion"
+                android:textSize="@dimen/keysize"
+                android:background="#a3a4a6"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:text=""
+                android:textSize="@dimen/keysize"
+                android:background="#a3a4a6"/>
+            <Button
+                android:id="@+id/digitdividido"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btndivision"
+                android:textSize="@dimen/keysize"
+                android:background="#a3a4a6"/>
+
+            <Button
+                android:id="@+id/digitclear"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:text="@string/btnc"
+                android:onClick="clear"
+                android:textSize="@dimen/keysize"
+                android:background="#a3a4a6"/>
+        </GridLayout>
+
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="#0fe48f"
+            android:columnCount="2"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/digitseno"
+                android:layout_width="wrap_content"
+                android:onClick="funcionEspecial"
+                android:text="@string/btnseno"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:textSize="@dimen/keysize"
+                android:layout_gravity="center_horizontal"
+                android:background="#0fe48f"/>
+            <Button
+                android:id="@+id/digitcoseno"
+                android:layout_width="wrap_content"
+                android:onClick="funcionEspecial"
+                android:text="@string/btncoseno"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:textSize="@dimen/keysize"
+                android:background="#0fe48f"
+                />
+            <Button
+                android:id="@+id/digittangente"
+                android:layout_width="wrap_content"
+                android:onClick="funcionEspecial"
+                android:text="@string/btntangente"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:textSize="@dimen/keysize"
+                android:layout_gravity="center_horizontal"
+                android:background="#0fe48f"/>
+
+
+            <Button
+                android:id="@+id/digitraiz"
+                android:layout_width="wrap_content"
+                android:onClick="funcionEspecial"
+                android:text="@string/btnraiz"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:textSize="@dimen/keysize"
+                android:layout_gravity="center_horizontal"
+                android:background="#0fe48f"
+                />
+
+            <Button
+                android:id="@+id/digitpotencia"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btnpotencia"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:textSize="@dimen/keysize"
+                android:layout_gravity="center_horizontal"
+                android:background="#0fe48f"/>
+
+            <Button
+                android:id="@+id/digitfactorial"
+                android:layout_width="wrap_content"
+                android:onClick="funcionEspecial"
+                android:text="@string/btnfactorial"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:textSize="@dimen/keysize"
+                android:layout_gravity="center_horizontal"
+                android:background="#0fe48f"
+
+                />
+
+            <Button
+                android:id="@+id/digitpi"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btnpi"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:textSize="@dimen/keysize"
+                android:layout_gravity="center_horizontal"
+                android:background="#0fe48f"
+                />
+
+            <Button
+                android:id="@+id/digite"
+                android:layout_width="wrap_content"
+                android:onClick="obtenerDigito"
+                android:text="@string/btne"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:layout_column="1"
+                android:textSize="@dimen/keysize"
+                android:layout_gravity="center_horizontal"
+                android:background="#0fe48f"/>
+        </GridLayout>
+
+    </LinearLayout>
 </LinearLayout>
