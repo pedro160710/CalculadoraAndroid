@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="fondoCalcNormal">#5C6BC0</color>
+    <color name="colorLetrasTeclas">#ffffff</color>
+    <color name="colorFondoCalcCientificaNumeros">#545658</color>
+    <color name="colorFondoCalcCientificaOper">#a3a4a6</color>
+    <color name="colorFondoCalcCientificaEspeciales">#0fe48f</color>
+
+
 </resources>
