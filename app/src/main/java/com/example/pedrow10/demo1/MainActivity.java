@@ -77,10 +77,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void calcular() {
 //        calcular = (Button) findViewById(R.id.digitigual);
-//        TextView textView1 = (TextView) findViewById(R.id.txtview1);
+        TextView textView2 = (TextView) findViewById(R.id.txtview2);
 
         Double calc = 0.0;
         int c = arrayList.size();
+        String errordivisionCero = getResources().getString(R.string.errorDivisionParaCero);
         System.out.println("INGRESA A CACULAR " + c);
 //ejemplo [2 + 3 * 4 - 3 ] size = 7, so c=
         while (c != 1) {
@@ -92,7 +93,11 @@ public class MainActivity extends AppCompatActivity {
                         calc = Double.parseDouble(arrayList.get(2)) * Double.parseDouble(arrayList.get(4));
                     }
                     if (arrayList.get(3).equals("/")) {
-                        calc = Double.parseDouble(arrayList.get(2)) / Double.parseDouble(arrayList.get(4));
+                        if (String.valueOf(arrayList.get(4)).equals("0")) {
+                            textView2.setError(errordivisionCero);
+                        } else {
+                            calc = Double.parseDouble(arrayList.get(2)) / Double.parseDouble(arrayList.get(4));
+                        }
                     }
 //                   calc =12; array= [2 + 3 * 4 - 3 ]
                     arrayList.remove(2); //array= [2 + * 4 - 3]
@@ -115,7 +120,11 @@ public class MainActivity extends AppCompatActivity {
                         calc = Double.parseDouble(arrayList.get(0)) * Double.parseDouble(arrayList.get(2));
                     }
                     if (arrayList.get(1).equals("/")) {
-                        calc = Double.parseDouble(arrayList.get(0)) / Double.parseDouble(arrayList.get(2));
+                        if (String.valueOf(arrayList.get(2)).equals("0")) {
+                            textView2.setError(errordivisionCero);
+                        } else {
+                            calc = Double.parseDouble(arrayList.get(0)) / Double.parseDouble(arrayList.get(2));
+                        }
                     }
 
 //                    calc=14; array=[2+12-3]
@@ -140,7 +149,11 @@ public class MainActivity extends AppCompatActivity {
                     calc = Double.parseDouble(arrayList.get(0)) * Double.parseDouble(arrayList.get(2));
                 }
                 if (arrayList.get(1).equals("/")) {
-                    calc = Double.parseDouble(arrayList.get(0)) / Double.parseDouble(arrayList.get(2));
+                    if (String.valueOf(arrayList.get(2)).equals("0")) {
+                        textView2.setError(errordivisionCero);
+                    } else {
+                        calc = Double.parseDouble(arrayList.get(0)) / Double.parseDouble(arrayList.get(2));
+                    }
                 }
                 if (arrayList.get(1).equals("^")) {
                     System.out.println("POTENCIA " + calc);

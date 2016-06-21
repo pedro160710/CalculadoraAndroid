@@ -35,5 +35,6 @@
 
 
     <string name="errorStringVacio">debe ingresar al menor un valor!</string>
+    <string name="errorDivisionParaCero">Error! no existe la division para cero</string>
 
 </resources>
