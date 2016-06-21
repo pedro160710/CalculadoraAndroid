@@ -32,4 +32,8 @@
     <string name="btne">e</string>
     <string name="tamanioLetraXlarge">40dp</string>
 
+
+
+    <string name="errorStringVacio">debe ingresar al menor un valor!</string>
+
 </resources>

@@ -26,7 +26,14 @@ public class MainActivity extends AppCompatActivity {
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calcular();
+                if (textView.getText().toString().equals("")) {
+                    String errorStringVacio = getResources().getString(R.string.errorStringVacio);
+                    textView.setError("pantalla " + errorStringVacio);
+                    return;
+
+                } else {
+                    calcular();
+                }
             }
         });
 
@@ -51,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
 //            el numero de un digito o mas siempre se va a guardar en esta posicion del arreglo
-            if(string.equals("pi")) {
+            if (string.equals("pi")) {
                 arrayList.add("3.141592653589793");
-            }else if (string.equals("e")){
+            } else if (string.equals("e")) {
                 arrayList.add("2.718281828459045");
-            }else{
+            } else {
                 arrayList.add(string1);
             }
         } else {
@@ -71,12 +78,14 @@ public class MainActivity extends AppCompatActivity {
     public void calcular() {
 //        calcular = (Button) findViewById(R.id.digitigual);
 //        TextView textView1 = (TextView) findViewById(R.id.txtview1);
+
         Double calc = 0.0;
         int c = arrayList.size();
         System.out.println("INGRESA A CACULAR " + c);
 //ejemplo [2 + 3 * 4 - 3 ] size = 7, so c=
         while (c != 1) {
             System.out.println("INGRESA A WHILE");
+
             if (c > 3) {
                 if (arrayList.get(3).equals("*") || arrayList.get(3).equals("/")) {
                     if (arrayList.get(3).equals("*")) {
@@ -150,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         textView.setText(Double.toString(calc));
+
     }
 
     public void clear(View v) {

@@ -23,22 +23,11 @@
             android:background="#F0F4C3"
             android:gravity="right"
             android:text=""
-            android:textSize="40dp"
+            android:textSize="60dp"
+            android:padding="20dp"
 
             />
-        <TextView
-            android:id="@+id/txtview1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_columnSpan="4"
-            android:layout_gravity="fill_horizontal"
-            android:layout_marginBottom="5dp"
-            android:background="#f5f5f5"
-            android:gravity="right"
-            android:text=""
-            android:textSize="40dp"
 
-            />
 
         <Button
             android:id="@+id/digit7"
